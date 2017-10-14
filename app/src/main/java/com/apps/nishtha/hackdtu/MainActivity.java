@@ -8,7 +8,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnGetSchedule, btnSetSchedule, btnCamera;
+    Button btnGetSchedule, btnSetSchedule,btnGraph,btnCamera;
+//    Button btnGetSchedule, btnSetSchedule, btnCamera;
 
 
     @Override
@@ -16,17 +17,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btnGetSchedule= (Button) findViewById(R.id.btnGetSchedule);
+        btnSetSchedule= (Button) findViewById(R.id.btnSetSchecule);
+        btnGraph=(Button) findViewById(R.id.btnGraph);
         btnGetSchedule = (Button) findViewById(R.id.btnGetSchedule);
         btnSetSchedule = (Button) findViewById(R.id.btnSetSchecule);
         btnCamera = (Button) findViewById(R.id.btnCamera);
         btnSetSchedule.setOnClickListener(this);
         btnGetSchedule.setOnClickListener(this);
+        btnGraph.setOnClickListener(this);
         btnCamera.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btnGetSchedule) {
+
 
         }
         if (view.getId() == R.id.btnSetSchecule) {
@@ -39,6 +45,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(i);
 //            AsyncTask asyncTask=new MyAsync();
 //            asyncTask.execute("");
+        }
+        if(view.getId()==R.id.btnGraph){
+            Intent intent=new Intent(MainActivity.this, GraphActivity.class);
+            startActivity(intent);
         }
     }
 }
