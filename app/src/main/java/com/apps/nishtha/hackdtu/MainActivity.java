@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnGetSchedule= (Button) findViewById(R.id.btnGetSchedule);
         btnSetSchedule= (Button) findViewById(R.id.btnSetSchecule);
+        btnSetSchedule.setOnClickListener(this);
+        btnGetSchedule.setOnClickListener(this);
     }
 
     @Override
