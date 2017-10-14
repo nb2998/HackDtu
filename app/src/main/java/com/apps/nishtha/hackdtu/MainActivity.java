@@ -8,7 +8,9 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnGetSchedule, btnSetSchedule,btnGraph;
+    Button btnGetSchedule, btnSetSchedule,btnGraph,btnCamera;
+//    Button btnGetSchedule, btnSetSchedule, btnCamera;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,21 +20,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnGetSchedule= (Button) findViewById(R.id.btnGetSchedule);
         btnSetSchedule= (Button) findViewById(R.id.btnSetSchecule);
         btnGraph=(Button) findViewById(R.id.btnGraph);
+        btnGetSchedule = (Button) findViewById(R.id.btnGetSchedule);
+        btnSetSchedule = (Button) findViewById(R.id.btnSetSchecule);
+        btnCamera = (Button) findViewById(R.id.btnCamera);
         btnSetSchedule.setOnClickListener(this);
         btnGetSchedule.setOnClickListener(this);
         btnGraph.setOnClickListener(this);
+        btnCamera.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        if(view.getId()==R.id.btnGetSchedule){
+        if (view.getId() == R.id.btnGetSchedule) {
 
 
         }
-        if(view.getId()==R.id.btnSetSchecule){
-            Intent i=new Intent(MainActivity.this,AddMedicineActivity.class);
+        if (view.getId() == R.id.btnSetSchecule) {
+            Intent i = new Intent(MainActivity.this, AddMedicineActivity.class);
 //            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);
+        }
+        if (view.getId() == R.id.btnCamera) {
+           Intent i=new Intent(MainActivity.this,CameraActivity.class);
+            startActivity(i);
+//            AsyncTask asyncTask=new MyAsync();
+//            asyncTask.execute("");
         }
         if(view.getId()==R.id.btnGraph){
             Intent intent=new Intent(MainActivity.this, GraphActivity.class);
