@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnGetSchedule, btnSetSchedule;
+    Button btnGetSchedule, btnSetSchedule,btnGraph;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,19 +17,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnGetSchedule= (Button) findViewById(R.id.btnGetSchedule);
         btnSetSchedule= (Button) findViewById(R.id.btnSetSchecule);
+        btnGraph=(Button) findViewById(R.id.btnGraph);
         btnSetSchedule.setOnClickListener(this);
         btnGetSchedule.setOnClickListener(this);
+        btnGraph.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         if(view.getId()==R.id.btnGetSchedule){
 
+
         }
         if(view.getId()==R.id.btnSetSchecule){
             Intent i=new Intent(MainActivity.this,AddMedicineActivity.class);
 //            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);
+        }
+        if(view.getId()==R.id.btnGraph){
+            Intent intent=new Intent(MainActivity.this, GraphActivity.class);
+            startActivity(intent);
         }
     }
 }

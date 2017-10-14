@@ -18,5 +18,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/get_schedule"/>
+    <Button
+        android:id="@+id/btnGraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Graph"/>
 
 </LinearLayout>
