@@ -40,7 +40,6 @@ public class AddMedicineActivity extends AppCompatActivity {
         disease = (EditText) findViewById(R.id.disease);
         total_days = (EditText) findViewById(R.id.days);
         total_pills = (EditText) findViewById(R.id.pills);
-
         timeTv = (TextView) findViewById(R.id.times_tv);
 
         submit = (Button) findViewById(R.id.submit);
@@ -109,6 +108,4 @@ public class AddMedicineActivity extends AppCompatActivity {
             }
         });
     }
-
 }
-
