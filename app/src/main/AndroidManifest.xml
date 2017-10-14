@@ -31,8 +31,11 @@
 
         <activity android:name=".GraphActivity" />
         android:exported="true" />
+
         <activity android:name=".CameraActivity" />
-        <activity android:name=".PresActivity"></activity>
+        <activity android:name=".PieChart" />
+        <activity android:name=".PresActivity" />
+        <activity android:name=".models.ScheduleActivity"></activity>
     </application>
 
 </manifest>

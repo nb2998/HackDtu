@@ -6,9 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.apps.nishtha.hackdtu.models.ScheduleActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnGetSchedule, btnSetSchedule,btnGraph,btnCamera;
+    Button btnGetSchedule, btnSetSchedule,btnGraph,btnCamera,btnPieChart;
 //    Button btnGetSchedule, btnSetSchedule, btnCamera;
 
 
@@ -27,13 +29,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnGetSchedule.setOnClickListener(this);
         btnGraph.setOnClickListener(this);
         btnCamera.setOnClickListener(this);
+        btnPieChart=(Button) findViewById(R.id.btnPieChart);
+        btnPieChart.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btnGetSchedule) {
-
-
+        Intent i=new Intent(MainActivity.this, ScheduleActivity.class);
+        startActivity(i);
         }
         if (view.getId() == R.id.btnSetSchecule) {
             Intent i = new Intent(MainActivity.this, AddMedicineActivity.class);
@@ -48,6 +52,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(view.getId()==R.id.btnGraph){
             Intent intent=new Intent(MainActivity.this, GraphActivity.class);
+            startActivity(intent);
+        }
+        if(view.getId()==R.id.btnPieChart){
+            Intent intent=new Intent(MainActivity.this,PieChart.class);
             startActivity(intent);
         }
     }

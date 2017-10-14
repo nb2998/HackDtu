@@ -24,6 +24,11 @@ public class Medicine implements Serializable{
     String medicine_description;
     @NonNull ArrayList<Time> times_of_medicine;
 
+    public Medicine()
+    {
+
+    }
+
     public Medicine(long id, String name, int times_in_day, int medicines_left, int days_left, int days_total,
                     String disease, String medicine_description, @NonNull ArrayList<Time> times_of_medicine) {
         this.id = id;
