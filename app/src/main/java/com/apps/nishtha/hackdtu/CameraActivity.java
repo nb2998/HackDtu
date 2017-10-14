@@ -1,12 +1,14 @@
 package com.apps.nishtha.hackdtu;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Surface;
+import android.view.View;
 import android.widget.FrameLayout;
 
 public class CameraActivity extends AppCompatActivity {
@@ -19,6 +21,32 @@ public class CameraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_camera);
     }
 
+    public void takePic(View view){
+        camera.takePicture(null,
+                new Camera.PictureCallback() {
+                    @Override
+                    public void onPictureTaken(byte[] bytes, Camera camera) {
+
+                    }
+                },
+                new Camera.PictureCallback() {
+                    @Override
+                    public void onPictureTaken(byte[] bytes, Camera camera) {
+
+
+                        camera.stopPreview();
+                        camera.setOneShotPreviewCallback(new Camera.PreviewCallback() {
+                            @Override
+                            public void onPreviewFrame(byte[] bytes, Camera camera) {
+
+                            }
+                        });
+                        Intent i=new Intent(CameraActivity.this,PresActivity.class );
+                        startActivity(i);
+                        finish();
+                    }
+                });
+    }
     @Override
     protected void onResume() {
         super.onResume();
@@ -50,11 +78,11 @@ public class CameraActivity extends AppCompatActivity {
         cameraView = new CameraView(this, camera);
         frameLayout.addView(cameraView);
     }
-
     @Override
     protected void onStop() {
         camera.release();
         frameLayout.removeView(cameraView);
+
         super.onStop();
     }
 }

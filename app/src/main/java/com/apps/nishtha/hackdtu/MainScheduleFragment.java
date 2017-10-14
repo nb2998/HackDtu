@@ -2,7 +2,9 @@ package com.apps.nishtha.hackdtu;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,7 +14,7 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainScheduleFragment extends Fragment {
+public class MainScheduleFragment extends AppCompatActivity {
 
     RecyclerView recViewMainSchedule;
 
@@ -23,14 +25,9 @@ public class MainScheduleFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v=inflater.inflate(R.layout.fragment_main_schedule, container, false);
-        recViewMainSchedule=v.findViewById(R.id.recViewMainSchedule);
-        recViewMainSchedule.setLayoutManager(new LinearLayoutManager(getContext()));
-        return v;
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        recViewMainSchedule= (RecyclerView) findViewById(R.id.recViewMainSchedule);
+        recViewMainSchedule.setLayoutManager(new LinearLayoutManager(MainScheduleFragment.this));
     }
-
-
 }

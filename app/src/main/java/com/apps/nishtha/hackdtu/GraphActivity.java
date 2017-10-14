@@ -16,7 +16,6 @@ public class GraphActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
         graph1 = (GraphView) findViewById(R.id.graph);
-        //String s=getArguments().getString("disp");
         DataPoint dp[];
         dp=new DataPoint[4];
         dp[0]=new DataPoint(1,0);
