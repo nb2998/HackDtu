@@ -1,6 +1,7 @@
 package com.apps.nishtha.hackdtu;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -105,6 +106,9 @@ public class AddMedicineActivity extends AppCompatActivity {
                 for(String s: times){
                     database.insertTime(new com.apps.nishtha.hackdtu.models.Medicine.Time(database.getNextTimeId(), id, s));
                 }
+                Intent intent=new Intent(AddMedicineActivity.this,MedicinesFragment.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
                 AddMedicineActivity.this.finish();
             }
         });

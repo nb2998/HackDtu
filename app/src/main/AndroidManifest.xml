@@ -20,6 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddMedicineActivity" />
+        <activity android:name=".MedicinesFragment" />
+        <activity android:name=".ScheduleFragment" />
 
         <service
             android:name=".MyService"
