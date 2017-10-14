@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCamera.setOnClickListener(this);
     }
 
-
-
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btnGetSchedule) {
@@ -39,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view.getId() == R.id.btnCamera) {
            Intent i=new Intent(MainActivity.this,CameraActivity.class);
             startActivity(i);
+//            AsyncTask asyncTask=new MyAsync();
+//            asyncTask.execute("");
         }
     }
 }
