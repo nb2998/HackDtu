@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.apps.nishtha.hackdtu.database.AbstractDBAdapter;
@@ -32,7 +31,6 @@ public class ScheduleFragment extends AppCompatActivity implements View.OnClickL
     ArrayList<MedicineSchedule> medicineScheduleArrayList;
     ArrayList<Time> completedTimes;
     AbstractDBAdapter abstractDBAdapter;
-    Button button;
 
 //    public ScheduleFragment() {
 //        // Required empty public constructor
@@ -48,15 +46,13 @@ public class ScheduleFragment extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.fragment_schedule);
         tvDate= (TextView) findViewById(R.id.tvDate);
         recViewSchedule= (RecyclerView) findViewById(R.id.recViewSchedule);
-        button= (Button) findViewById(R.id.btnPieChart);
         abstractDBAdapter=new AbstractDBAdapter(this);
         Medicine medicine = (Medicine) getIntent().getSerializableExtra("data");
-;
+
         recViewSchedule.setLayoutManager(new LinearLayoutManager(this));
 
        // medicineScheduleArrayList = abstractDBAdapter.getScheduleOfMedicine()
 
-        button.setOnClickListener(this);
 
         Calendar c=Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("dd+MMM-yyyy");
@@ -77,26 +73,4 @@ public class ScheduleFragment extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
         }
     }
-
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate the layout for this fragment
-//        View v= inflater.inflate(R.layout.fragment_schedule, container, false);
-//        tvDate=v.findViewById(R.id.tvDate);
-//        recViewSchedule=v.findViewById(R.id.recViewSchedule);
-//        abstractDBAdapter=new AbstractDBAdapter(getContext());
-//
-//        recViewSchedule.setLayoutManager(new LinearLayoutManager(getContext()));
-//
-//        Calendar c=Calendar.getInstance();
-//        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
-//        String formattedDate = df.format(c.getTime());
-////        medicineScheduleArrayList.addAll(abstractDBAdapter.getScheduleOfMedicine(1,formattedDate));
-//
-//
-//        recViewSchedule.setAdapter(new ScheduleAdapter(medicineScheduleArrayList,completedTimes,getContext()));
-//        return v;
-//    }
-
 }
