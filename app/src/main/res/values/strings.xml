@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HackDtu</string>
+    <string name="set_schedule">Set Schedule</string>
+    <string name="get_schedule">Get Schedule</string>
+</resources>
